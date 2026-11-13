@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Maison Aria — Private Architectural Consultation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./interior-desgin/styles/interior.css" />
+    <link
+      rel="stylesheet"
+      href="./interior-desgin/styles/interior-detail.css"
+    />
+  </head>
+  <body>
+    <div class="sunlit-shadow-overlay" aria-hidden="true"></div>
+    <div id="cur"></div>
+
+    <nav class="hud-nav">
+      <div class="nav-left">
+        <a class="logo" href="index-interior.html#top">Maison <i>Aria</i></a>
+      </div>
+      <div class="nav-links">
+        <a href="index-interior.html#carousel-stage">Projects</a>
+        <a href="index-interior.html#services">Services</a>
+      </div>
+    </nav>
+
+    <main class="detail-view-container">
+      <div class="booking-form-wrapper">
+        <div class="consultation-form-card">
+          <p class="eye mono-tag">Private Consultation Desk</p>
+          <h3>Commission Your Space</h3>
+          <p>
+            Tell us about your property and requirements. You will receive an
+            immediate formal consultation receipt dossier.
+          </p>
+
+          <form id="master-consultation-form">
+            <label class="field-label" for="client-name">Full Legal Name</label>
+            <input
+              type="text"
+              id="client-name"
+              class="styled-field"
+              placeholder="e.g. Usman Ali"
+              required
+            />
+
+            <div class="form-double-col">
+              <div>
+                <label class="field-label" for="client-email"
+                  >Email (For Official Confirmation)</label
+                >
+                <input
+                  type="email"
+                  id="client-email"
+                  class="styled-field"
+                  placeholder="your.email@gmail.com"
+                  required
+                />
+              </div>
+              <div>
+                <label class="field-label" for="client-phone"
+                  >Direct Phone / WhatsApp</label
+                >
+                <input
+                  type="tel"
+                  id="client-phone"
+                  class="styled-field"
+                  placeholder="0300-1234567"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-double-col">
+              <div>
+                <label class="field-label" for="client-scope"
+                  >Project Scope &amp; Typology</label
+                >
+                <select id="client-scope" class="styled-field" required>
+                  <option value="Full Villa Architectural Interior">
+                    Full Villa Architectural Interior
+                  </option>
+                  <option value="Luxury Apartment Renovation">
+                    Luxury Apartment Renovation
+                  </option>
+                  <option value="Corporate Office & Commercial Space">
+                    Corporate Office &amp; Commercial Space
+                  </option>
+                  <option value="Kitchen & Master Spa-Bath Redesign">
+                    Kitchen &amp; Master Spa-Bath Redesign
+                  </option>
+                  <option value="Bespoke Styling & Curated Decor">
+                    Bespoke Styling &amp; Curated Decor
+                  </option>
+                </select>
+              </div>
+              <div>
+                <label class="field-label" for="client-area"
+                  >Estimated Space Area</label
+                >
+                <input
+                  type="text"
+                  id="client-area"
+                  class="styled-field"
+                  placeholder="e.g. 4,500 sq.ft or 1 Kanal"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-double-col">
+              <div>
+                <label class="field-label" for="client-budget"
+                  >Target Budget Allocation</label
+                >
+                <select id="client-budget" class="styled-field" required>
+                  <option value="Rs 3.0M - 5.0M">Rs 3.0M - 5.0M</option>
+                  <option value="Rs 5.0M - 8.0M">Rs 5.0M - 8.0M</option>
+                  <option value="Rs 8.0M - 15.0M">Rs 8.0M - 15.0M</option>
+                  <option value="Rs 15.0M+ (Bespoke Luxury)">
+                    Rs 15.0M+ (Bespoke Luxury)
+                  </option>
+                </select>
+              </div>
+              <div>
+                <label class="field-label" for="client-city"
+                  >Property City / Sector</label
+                >
+                <input
+                  type="text"
+                  id="client-city"
+                  class="styled-field"
+                  placeholder="e.g. DHA Lahore / F-7 Islamabad"
+                  required
+                />
+              </div>
+            </div>
+
+            <label class="field-label" for="client-notes"
+              >Design Notes or Specific Requests</label
+            >
+            <textarea
+              id="client-notes"
+              rows="3"
+              class="styled-field"
+              placeholder="Briefly describe your style preference (warm minimalist, modern classic, etc.)"
+            ></textarea>
+
+            <button
+              type="submit"
+              id="btn-submit-booking"
+              class="submit-booking-action"
+            >
+              Confirm Consultation Booking ✦
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      © 2026 Maison Aria Interior Architecture Studio. All rights reserved.
+    </footer>
+
+    <script
+      type="module"
+      src="./interior-desgin/scripts/consultationHandler.js"
+    ></script>
+  </body>
+</html>

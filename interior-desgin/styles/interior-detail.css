@@ -1,0 +1,450 @@
+/* =========================================================
+   Interior Detail, Booking Form & Receipt Styles
+   ========================================================= */
+.detail-view-container {
+  padding: 130px 6% 80px;
+  min-height: 85vh;
+  position: relative;
+  z-index: 2;
+}
+
+.breadcrumb-strip {
+  margin-bottom: 30px;
+}
+
+.breadcrumb-strip a {
+  color: var(--tx);
+  background: var(--s);
+  backdrop-filter: blur(12px);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--bd);
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.breadcrumb-strip a:hover {
+  background: var(--a);
+  color: #fff;
+  border-color: var(--a);
+}
+
+.project-split-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.project-visual-frame {
+  border-radius: 26px;
+  overflow: hidden;
+  border: 2px solid var(--bd);
+  box-shadow: var(--glass-shadow);
+  background: var(--s);
+  backdrop-filter: blur(16px);
+}
+
+.detail-sticky-frame {
+  position: sticky;
+  top: 108px;
+}
+
+.detail-scroll-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 440px;
+  overflow: hidden;
+  background: #1b140f;
+}
+
+.detail-scroll-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.detail-scroll-img.is-active {
+  opacity: 1;
+}
+
+.detail-scroll-caption {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 4;
+  padding: 6px 14px;
+  border-radius: 99px;
+  background: rgba(24, 18, 13, 0.72);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.detail-scroll-bar-track {
+  width: 100%;
+  height: 5px;
+  background: rgba(42, 34, 27, 0.14);
+}
+
+.detail-scroll-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--a);
+  transition: width 0.12s linear;
+}
+
+.project-info-column h1 {
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.project-info-column .project-tagline {
+  color: var(--a);
+  font-size: 1.05rem;
+  font-family: "Playfair Display", Georgia, serif;
+  margin-bottom: 18px;
+  font-style: italic;
+}
+
+.project-narrative {
+  color: var(--mut);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.specs-grid-box {
+  background: var(--s);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--bd);
+  border-radius: 20px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.spec-cell span {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--mut);
+  letter-spacing: 0.1em;
+}
+
+.spec-cell b {
+  font-size: 1.08rem;
+  color: var(--tx);
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.detail-layer-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 28px 0 34px;
+}
+
+.detail-layer-card {
+  background: var(--s);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--bd-subtle);
+  border-radius: 18px;
+  padding: 20px 22px;
+  transition:
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.detail-layer-card.is-highlighted {
+  border-color: var(--a);
+  transform: translateX(6px);
+}
+
+.detail-layer-card h4 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.2rem;
+  margin: 4px 0 6px;
+}
+
+.detail-layer-card p {
+  color: var(--mut);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.design-features-list {
+  list-style: none;
+  margin-bottom: 35px;
+}
+
+.design-features-list li {
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--bd-subtle);
+  font-size: 0.95rem;
+  display: flex;
+  gap: 10px;
+}
+
+.design-features-list li::before {
+  content: "✦";
+  color: var(--a);
+  font-weight: bold;
+}
+
+/* Other Designs Navigation Section */
+.other-designs-section {
+  margin-top: 85px;
+  padding: 60px 0 10px;
+  border-top: 1px dashed var(--bd-subtle);
+}
+
+.other-designs-head {
+  margin-bottom: 28px;
+}
+
+.other-designs-head h2 {
+  font-size: clamp(1.8rem, 3.6vw, 2.7rem);
+}
+
+.other-designs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.other-design-card {
+  background: var(--s);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--bd);
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--tx);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+  box-shadow: 0 14px 35px rgba(42, 34, 27, 0.08);
+}
+
+.other-design-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--a);
+}
+
+.other-design-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.other-design-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.other-design-card:hover .other-design-thumb img {
+  transform: scale(1.04);
+}
+
+.other-design-body {
+  padding: 16px 18px;
+}
+
+.other-design-body span {
+  color: var(--a);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.other-design-body h4 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.other-design-body p {
+  color: var(--mut);
+  font-size: 0.85rem;
+}
+
+/* Consultation Form Card */
+.booking-form-wrapper {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.consultation-form-card {
+  background: var(--s);
+  backdrop-filter: blur(22px);
+  border: 1.5px solid var(--bd);
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow: var(--glass-shadow);
+}
+
+.consultation-form-card h3 {
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+}
+
+.consultation-form-card p {
+  color: var(--mut);
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+.field-label {
+  font-size: 0.8rem;
+  color: var(--mut);
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-double-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.styled-field {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--bd-subtle);
+  color: var(--tx);
+  border-radius: 12px;
+  font-family: inherit;
+  outline: none;
+  font-size: 0.92rem;
+  transition: border-color 0.25s;
+}
+
+.styled-field:focus {
+  border-color: var(--a);
+}
+
+.submit-booking-action {
+  width: 100%;
+  padding: 16px;
+  background: var(--a);
+  color: #fff;
+  border: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.submit-booking-action:hover {
+  background: #964d32;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(181, 105, 74, 0.35);
+}
+
+/* Booking Receipt */
+.booking-receipt-card {
+  max-width: 680px;
+  margin: 20px auto;
+  background: var(--s);
+  backdrop-filter: blur(22px);
+  border: 1.5px solid var(--bd);
+  border-radius: 26px;
+  padding: 45px 40px;
+  text-align: center;
+  box-shadow: var(--glass-shadow);
+}
+
+.receipt-icon-badge {
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  background: var(--a);
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+.receipt-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.receipt-subtitle {
+  color: var(--mut);
+  margin: 12px 0 25px;
+}
+
+.receipt-data-table {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--bd-subtle);
+  padding: 24px;
+  text-align: left;
+  border-radius: 16px;
+  margin: 25px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  font-size: 0.92rem;
+}
+
+.receipt-data-table span {
+  color: var(--mut);
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.receipt-data-table b {
+  color: var(--tx);
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.receipt-ref-highlight {
+  color: var(--a);
+  font-size: 1.2rem;
+}
+
+.receipt-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 850px) {
+  .project-split-layout,
+  .form-double-col,
+  .specs-grid-box,
+  .receipt-data-table {
+    grid-template-columns: 1fr;
+  }
+  .detail-sticky-frame {
+    position: relative;
+    top: 0;
+  }
+}

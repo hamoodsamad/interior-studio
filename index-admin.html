@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Maison Aria — Studio Admin Portal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./interior-desgin/styles/interior.css" />
+    <link
+      rel="stylesheet"
+      href="./public/interior-desgin/styles/interior-detail.css"
+    />
+    <link rel="stylesheet" href="./public/interior-desgin/styles/admin.css" />
+  </head>
+  <body>
+    <div class="sunlit-shadow-overlay" aria-hidden="true"></div>
+    <div id="cur"></div>
+
+    <nav class="hud-nav">
+      <div class="nav-left">
+        <a class="logo" href="index-interior.html#top">Maison <i>Aria</i></a>
+        <span class="nav-coords mono-tag">ADMIN CMS // PORTFOLIO</span>
+      </div>
+      <div class="nav-links">
+        <a href="index-interior.html">← View Live Website</a>
+        <button
+          type="button"
+          id="admin-logout-btn"
+          class="nav-btn-consult hidden"
+        >
+          Lock Admin 🔒
+        </button>
+      </div>
+    </nav>
+
+    <main class="detail-view-container">
+      <section id="admin-auth-view" class="admin-auth-wrapper">
+        <div class="consultation-form-card admin-auth-card">
+          <p class="eye mono-tag">Restricted Studio Access</p>
+          <h2 id="auth-heading">Admin <em>Sign In</em></h2>
+          <p id="auth-subtext">
+            Enter your studio admin password to add, edit, or delete
+            architectural showcase projects.
+          </p>
+
+          <form id="admin-login-form">
+            <label class="field-label" for="admin-login-pass"
+              >Admin Password</label
+            >
+            <div class="password-input-wrap">
+              <input
+                type="password"
+                id="admin-login-pass"
+                class="styled-field"
+                placeholder="Enter admin password"
+                required
+              />
+              <button
+                type="button"
+                class="eye-toggle-btn"
+                data-target="admin-login-pass"
+                aria-label="Show or hide password"
+                title="Show / Hide Password"
+              >
+                👁
+              </button>
+            </div>
+
+            <div id="login-error-msg" class="admin-alert error hidden"></div>
+
+            <button type="submit" class="submit-booking-action">
+              Unlock Studio CMS ✦
+            </button>
+
+            <div class="auth-helper-row">
+              <button
+                type="button"
+                id="btn-open-forgot"
+                class="text-action-link"
+              >
+                Forgot Password? Reset Here
+              </button>
+              <span class="mono-tag auth-default-hint">Default: aria2026</span>
+            </div>
+          </form>
+
+          <form id="admin-forgot-form" class="hidden">
+            <label class="field-label" for="recovery-key-input"
+              >Studio Recovery Key</label
+            >
+            <div class="password-input-wrap">
+              <input
+                type="password"
+                id="recovery-key-input"
+                class="styled-field"
+                placeholder="Default key: MAISON-ARIA-RECOVERY"
+                required
+              />
+              <button
+                type="button"
+                class="eye-toggle-btn"
+                data-target="recovery-key-input"
+                aria-label="Toggle recovery key visibility"
+              >
+                👁
+              </button>
+            </div>
+
+            <label class="field-label" for="forgot-new-pass"
+              >New Admin Password</label
+            >
+            <div class="password-input-wrap">
+              <input
+                type="password"
+                id="forgot-new-pass"
+                class="styled-field"
+                placeholder="Minimum 5 characters"
+                minlength="5"
+                required
+              />
+              <button
+                type="button"
+                class="eye-toggle-btn"
+                data-target="forgot-new-pass"
+                aria-label="Show or hide new password"
+              >
+                👁
+              </button>
+            </div>
+
+            <label class="field-label" for="forgot-confirm-pass"
+              >Confirm New Password</label
+            >
+            <div class="password-input-wrap">
+              <input
+                type="password"
+                id="forgot-confirm-pass"
+                class="styled-field"
+                placeholder="Re-type new password"
+                minlength="5"
+                required
+              />
+              <button
+                type="button"
+                class="eye-toggle-btn"
+                data-target="forgot-confirm-pass"
+                aria-label="Show or hide confirm password"
+              >
+                👁
+              </button>
+            </div>
+
+            <div id="forgot-status-msg" class="admin-alert hidden"></div>
+
+            <button type="submit" class="submit-booking-action">
+              Reset &amp; Save New Password ✓
+            </button>
+
+            <div class="auth-helper-row">
+              <button
+                type="button"
+                id="btn-back-login"
+                class="text-action-link"
+              >
+                ← Back to Sign In
+              </button>
+              <span class="mono-tag auth-default-hint"
+                >Key: MAISON-ARIA-RECOVERY</span
+              >
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="admin-dashboard-view" class="admin-dashboard hidden">
+        <div class="admin-header-bar">
+          <div>
+            <p class="eye mono-tag">Studio Portfolio Control</p>
+            <h1>Manage <em>Showcase Projects</em></h1>
+          </div>
+          <div class="admin-top-actions">
+            <a href="index-interior.html#deep-showcase-stage" class="btn"
+              >Preview Scroll Showcase ↗</a
+            >
+            <button type="button" id="btn-reset-defaults" class="btn">
+              Restore Defaults ↺
+            </button>
+          </div>
+        </div>
+
+        <div class="admin-grid-layout">
+          <div class="consultation-form-card admin-editor-card">
+            <div class="editor-head-row">
+              <h3 id="editor-form-title">Add New Project</h3>
+              <button
+                type="button"
+                id="btn-cancel-edit"
+                class="detail-angle-btn hidden"
+              >
+                Cancel Edit ✕
+              </button>
+            </div>
+            <p>
+              Add a new space below. It will automatically get the 3-layer deep
+              zoom scroll animation on your live site.
+            </p>
+
+            <form id="admin-project-form">
+              <input type="hidden" id="proj-id" />
+
+              <div class="form-double-col">
+                <div>
+                  <label class="field-label" for="proj-title"
+                    >Project / Product Title *</label
+                  >
+                  <input
+                    type="text"
+                    id="proj-title"
+                    class="styled-field"
+                    placeholder="e.g. Margalla Glass Villa"
+                    required
+                  />
+                </div>
+                <div>
+                  <label class="field-label" for="proj-shadow"
+                    >Wall Shadow Word *</label
+                  >
+                  <input
+                    type="text"
+                    id="proj-shadow"
+                    class="styled-field"
+                    placeholder="e.g. GLASS VILLA"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-double-col">
+                <div>
+                  <label class="field-label" for="proj-category"
+                    >Category *</label
+                  >
+                  <input
+                    type="text"
+                    id="proj-category"
+                    class="styled-field"
+                    placeholder="e.g. Residential Architecture"
+                    required
+                  />
+                </div>
+                <div>
+                  <label class="field-label" for="proj-external-link"
+                    >Product / Reference Link (Optional)</label
+                  >
+                  <input
+                    type="url"
+                    id="proj-external-link"
+                    class="styled-field"
+                    placeholder="https://... (leave empty for auto dossier)"
+                  />
+                </div>
+              </div>
+
+              <div class="form-double-col">
+                <div>
+                  <label class="field-label" for="proj-location"
+                    >Location *</label
+                  >
+                  <input
+                    type="text"
+                    id="proj-location"
+                    class="styled-field"
+                    placeholder="e.g. E-7, Islamabad"
+                    required
+                  />
+                </div>
+                <div>
+                  <label class="field-label" for="proj-area"
+                    >Spatial Area *</label
+                  >
+                  <input
+                    type="text"
+                    id="proj-area"
+                    class="styled-field"
+                    placeholder="e.g. 4,800 sq.ft"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-double-col">
+                <div>
+                  <label class="field-label" for="proj-budget"
+                    >Display Budget *</label
+                  >
+                  <input
+                    type="text"
+                    id="proj-budget"
+                    class="styled-field"
+                    placeholder="e.g. Rs 9.5M"
+                    required
+                  />
+                </div>
+                <div>
+                  <label class="field-label" for="proj-timeline"
+                    >Execution Timeline *</label
+                  >
+                  <input
+                    type="text"
+                    id="proj-timeline"
+                    class="styled-field"
+                    placeholder="e.g. 16 Weeks"
+                    required
+                  />
+                </div>
+              </div>
+
+              <label class="field-label" for="proj-tagline"
+                >Short Tagline *</label
+              >
+              <input
+                type="text"
+                id="proj-tagline"
+                class="styled-field"
+                placeholder="One-line architectural summary"
+                required
+              />
+
+              <label class="field-label" for="proj-desc"
+                >Full Architectural Details *</label
+              >
+              <textarea
+                id="proj-desc"
+                rows="3"
+                class="styled-field"
+                placeholder="Describe the materials, lighting, and interior concept..."
+                required
+              ></textarea>
+
+              <div class="media-layers-box">
+                <p class="eye mono-tag">
+                  Scroll Zoom Images (Paste URL OR Open Folder)
+                </p>
+
+                <div class="media-upload-row">
+                  <div class="media-preview-thumb">
+                    <img id="preview-img-0" src="" alt="Layer 1 Preview" />
+                  </div>
+                  <div class="media-inputs-col">
+                    <label class="field-label" for="proj-img-0"
+                      >01 // Overview Image (URL or Local File) *</label
+                    >
+                    <div class="url-folder-group">
+                      <input
+                        type="text"
+                        id="proj-img-0"
+                        class="styled-field"
+                        placeholder="Paste image URL or choose from folder →"
+                        required
+                      />
+                      <label class="folder-pick-btn">
+                        📁 Open Folder
+                        <input
+                          type="file"
+                          accept="image/*"
+                          class="hidden-file-input"
+                          data-img-index="0"
+                        />
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="media-upload-row">
+                  <div class="media-preview-thumb">
+                    <img id="preview-img-1" src="" alt="Layer 2 Preview" />
+                  </div>
+                  <div class="media-inputs-col">
+                    <label class="field-label" for="proj-img-1"
+                      >02 // Inside View Image (URL or Local File)</label
+                    >
+                    <div class="url-folder-group">
+                      <input
+                        type="text"
+                        id="proj-img-1"
+                        class="styled-field"
+                        placeholder="Optional: second zoom angle"
+                      />
+                      <label class="folder-pick-btn">
+                        📁 Open Folder
+                        <input
+                          type="file"
+                          accept="image/*"
+                          class="hidden-file-input"
+                          data-img-index="1"
+                        />
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="media-upload-row">
+                  <div class="media-preview-thumb">
+                    <img id="preview-img-2" src="" alt="Layer 3 Preview" />
+                  </div>
+                  <div class="media-inputs-col">
+                    <label class="field-label" for="proj-img-2"
+                      >03 // Deep Detail Image (URL or Local File)</label
+                    >
+                    <div class="url-folder-group">
+                      <input
+                        type="text"
+                        id="proj-img-2"
+                        class="styled-field"
+                        placeholder="Optional: deep close-up angle"
+                      />
+                      <label class="folder-pick-btn">
+                        📁 Open Folder
+                        <input
+                          type="file"
+                          accept="image/*"
+                          class="hidden-file-input"
+                          data-img-index="2"
+                        />
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <details class="deep-captions-accordion">
+                <summary class="mono-tag">
+                  + Customize 3-Layer Scroll Captions &amp; Materials (Optional)
+                </summary>
+                <div class="accordion-inner">
+                  <div class="form-double-col">
+                    <div>
+                      <label class="field-label" for="layer1-title"
+                        >Layer 1 Heading</label
+                      >
+                      <input
+                        type="text"
+                        id="layer1-title"
+                        class="styled-field"
+                        placeholder="e.g. Sunlit Courtyard Axis"
+                      />
+                    </div>
+                    <div>
+                      <label class="field-label" for="layer1-mat"
+                        >Layer 1 Material Tag</label
+                      >
+                      <input
+                        type="text"
+                        id="layer1-mat"
+                        class="styled-field"
+                        placeholder="e.g. TRAVERTINE + OAK"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-double-col">
+                    <div>
+                      <label class="field-label" for="layer2-title"
+                        >Layer 2 Heading (Inside)</label
+                      >
+                      <input
+                        type="text"
+                        id="layer2-title"
+                        class="styled-field"
+                        placeholder="e.g. Custom Joinery & Lounge"
+                      />
+                    </div>
+                    <div>
+                      <label class="field-label" for="layer2-mat"
+                        >Layer 2 Material Tag</label
+                      >
+                      <input
+                        type="text"
+                        id="layer2-mat"
+                        class="styled-field"
+                        placeholder="e.g. SMOKED WALNUT"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-double-col">
+                    <div>
+                      <label class="field-label" for="layer3-title"
+                        >Layer 3 Heading (Deep Detail)</label
+                      >
+                      <input
+                        type="text"
+                        id="layer3-title"
+                        class="styled-field"
+                        placeholder="e.g. Architectural Lighting"
+                      />
+                    </div>
+                    <div>
+                      <label class="field-label" for="proj-features"
+                        >Key Features (comma separated)</label
+                      >
+                      <input
+                        type="text"
+                        id="proj-features"
+                        class="styled-field"
+                        placeholder="Limewash walls, Brass fixtures, Acoustic drapery"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+              <div id="project-save-msg" class="admin-alert hidden"></div>
+
+              <button
+                type="submit"
+                id="btn-save-project"
+                class="submit-booking-action"
+              >
+                Save &amp; Publish to Scroll Showcase ✦
+              </button>
+            </form>
+          </div>
+
+          <div class="admin-sidebar-stack">
+            <div class="consultation-form-card">
+              <p class="eye mono-tag">Live Showcase Order</p>
+              <h3>Active Projects (<span id="projects-count">0</span>)</h3>
+              <p>
+                Every project listed below scrolls sequentially with full 3-step
+                depth zoom.
+              </p>
+
+              <div id="admin-projects-list" class="admin-projects-list"></div>
+            </div>
+
+            <div class="consultation-form-card">
+              <p class="eye mono-tag">Security &amp; Credentials</p>
+              <h3>Change Admin Password</h3>
+              <form id="admin-change-pass-form">
+                <label class="field-label" for="change-current-pass"
+                  >Current Password</label
+                >
+                <div class="password-input-wrap">
+                  <input
+                    type="password"
+                    id="change-current-pass"
+                    class="styled-field"
+                    placeholder="Enter current password"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="eye-toggle-btn"
+                    data-target="change-current-pass"
+                    aria-label="Toggle current password"
+                  >
+                    👁
+                  </button>
+                </div>
+
+                <label class="field-label" for="change-new-pass"
+                  >New Password</label
+                >
+                <div class="password-input-wrap">
+                  <input
+                    type="password"
+                    id="change-new-pass"
+                    class="styled-field"
+                    placeholder="Enter new password"
+                    minlength="5"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="eye-toggle-btn"
+                    data-target="change-new-pass"
+                    aria-label="Toggle new password"
+                  >
+                    👁
+                  </button>
+                </div>
+
+                <label class="field-label" for="change-recovery-key"
+                  >Recovery Key (For Forgot Password)</label
+                >
+                <div class="password-input-wrap">
+                  <input
+                    type="password"
+                    id="change-recovery-key"
+                    class="styled-field"
+                    placeholder="Update recovery key (optional)"
+                  />
+                  <button
+                    type="button"
+                    class="eye-toggle-btn"
+                    data-target="change-recovery-key"
+                    aria-label="Toggle recovery key"
+                  >
+                    👁
+                  </button>
+                </div>
+
+                <div id="change-pass-msg" class="admin-alert hidden"></div>
+
+                <button type="submit" class="submit-booking-action">
+                  Update Credentials ✓
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © 2026 Maison Aria Interior Architecture Studio. All rights reserved.
+    </footer>
+
+    <script
+      type="module"
+      src=".interior-desgin/scripts/adminHandler.js"
+    ></script>
+  </body>
+</html>

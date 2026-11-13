@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Maison Aria — Interior Architecture Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./interior-desgin/styles/interior.css" />
+  </head>
+  <body>
+    <div class="sunlit-shadow-overlay" aria-hidden="true"></div>
+    <div id="cur"></div>
+
+    <!-- Intro Architectural HUD Loader -->
+    <div id="studio-preloader" class="studio-preloader">
+      <div class="preloader-pinwheel" id="preloader-pinwheel">
+        <div class="pin-item pin-1">
+          <img
+            src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=400&q=80"
+            alt="Living Sanctuary"
+          />
+        </div>
+        <div class="pin-item pin-2">
+          <img
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=400&q=80"
+            alt="Modern Lounge"
+          />
+        </div>
+        <div class="pin-item pin-3">
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80"
+            alt="Architectural Villa"
+          />
+        </div>
+        <div class="pin-item pin-4">
+          <img
+            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=400&q=80"
+            alt="Bespoke Dining"
+          />
+        </div>
+        <div class="pin-item pin-5">
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=400&q=80"
+            alt="Minimalist Suite"
+          />
+        </div>
+      </div>
+
+      <div class="hud-loader-box">
+        <div class="hud-loader-top">
+          <span class="mono-tag">CALIBRATING SPACE...</span>
+          <span class="mono-tag" id="loader-percent">00%</span>
+        </div>
+        <div class="hud-progress-track">
+          <div class="hud-progress-fill" id="hud-progress-fill"></div>
+        </div>
+        <div class="hud-loader-meta">
+          <span>LIGHTING: GOLDEN HOUR</span>
+          <span>EST. LOAD: 0.8 SEC</span>
+          <span>STUDIO: MAISON ARIA</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frosted Top Navigation Pill -->
+    <nav class="hud-nav">
+      <div class="nav-left">
+        <a
+          href="index.html"
+          class="nav-back-portfolio mono-tag"
+          title="Back to Main Portfolio"
+          >← Portfolio</a
+        >
+        <a class="logo" href="#top">Maison <i>Aria</i></a>
+        <span class="nav-coords mono-tag">31.52° N / ARCH STUDIO</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#deep-showcase-stage">Projects (01–05)</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="index-consultation-booking.html" class="nav-btn-consult"
+          >Book Consultation ✦</a
+        >
+      </div>
+    </nav>
+
+    <!-- Stage 1: Hero -->
+    <header class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eye mono-tag">00.00 // Interior Architecture Studio</p>
+        <h1>
+          Maison Aria <br />
+          <em>/ Think Warm.</em> <br />
+          / Live Timeless.
+        </h1>
+        <p class="hero-lead">
+          We sculpt sunlit homes and executive spaces—from initial architectural
+          drafting to bespoke material curation. Keep scrolling to fly deep
+          inside all five signature spaces and uncover every tactile layer.
+        </p>
+        <div class="hero-actions">
+          <a class="btn f" href="index-consultation-booking.html"
+            >Book a Consultation</a
+          >
+          <a class="btn" href="#deep-showcase-stage">Start Deep Scroll ↓</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-wheel-stage" id="hero-wheel-stage">
+          <div class="arch" id="hr">
+            <img
+              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80"
+              alt="Luxury Interior Living Room"
+              class="hero-img"
+            />
+          </div>
+          <div class="hud-badge bdg-left">
+            <span class="mono-tag">PROJECTS</span>
+            <b>250+</b>
+          </div>
+          <div class="hud-badge bdg-right">
+            <span class="mono-tag">EXPERIENCE</span>
+            <b>12 yrs</b>
+          </div>
+        </div>
+      </div>
+
+      <div class="dot-matrix-decor" aria-hidden="true"></div>
+    </header>
+
+    <!-- Stage 2: Scroll-Driven Deep-Dive Cinema Showcase -->
+    <section id="deep-showcase-stage" class="deep-showcase-section">
+      <span id="carousel-stage" class="anchor-marker" aria-hidden="true"></span>
+      <span
+        id="inspector-stage"
+        class="anchor-marker"
+        aria-hidden="true"
+      ></span>
+
+      <div class="deep-sticky-viewport">
+        <div
+          class="wall-shadow-word deep-shadow-word"
+          id="showcase-shadow-word"
+        >
+          SAND VILLA
+        </div>
+
+        <div class="deep-top-bar">
+          <div class="deep-heading-wrap">
+            <p class="eye mono-tag" id="showcase-chapter-eye">
+              01.00 / 05.00 // SCROLL TO ENTER SPACE
+            </p>
+            <h2 id="showcase-project-title">Sand Villa Sanctuary</h2>
+          </div>
+
+          <div class="chapter-rail" id="showcase-chapter-rail"></div>
+        </div>
+
+        <div class="deep-cinema-grid">
+          <div class="deep-image-stage" id="showcase-image-stage">
+            <img
+              id="deep-layer-0"
+              class="deep-layer-img is-visible"
+              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=85"
+              alt="Overview"
+            />
+            <img
+              id="deep-layer-1"
+              class="deep-layer-img"
+              src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=85"
+              alt="Inside View"
+            />
+            <img
+              id="deep-layer-2"
+              class="deep-layer-img"
+              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85"
+              alt="Deep Detail"
+            />
+
+            <div class="deep-stage-vignette" aria-hidden="true"></div>
+
+            <div class="deep-zoom-badge glass-pill">
+              <span class="zoom-pulse-dot"></span>
+              <span class="mono-tag" id="depth-zoom-label"
+                >DEPTH 1.00× // OVERVIEW</span
+              >
+            </div>
+
+            <div class="deep-reticle" id="deep-reticle">
+              <span class="reticle-ring"></span>
+              <span class="reticle-core">+</span>
+              <span class="reticle-tag mono-tag" id="reticle-tag-label"
+                >INSPECTING</span
+              >
+            </div>
+          </div>
+
+          <aside class="deep-hud-panel glass-hud" id="showcase-hud-panel">
+            <div class="depth-step-tabs" id="depth-step-tabs">
+              <button type="button" class="depth-tab active" data-depth="0">
+                01 Overview
+              </button>
+              <button type="button" class="depth-tab" data-depth="1">
+                02 Inside View
+              </button>
+              <button type="button" class="depth-tab" data-depth="2">
+                03 Deep Detail
+              </button>
+            </div>
+
+            <div class="deep-hud-body">
+              <span class="mono-tag deep-layer-tag" id="deep-layer-kicker"
+                >LAYER 01 // SPATIAL ENTRANCE</span
+              >
+              <h3 id="deep-detail-title">Warm Travertine &amp; Daylight</h3>
+              <p id="deep-detail-desc">
+                Designed around slow morning light, Sand Villa strips away
+                excess ornament to celebrate limewashed walls and fluted oak.
+              </p>
+
+              <div class="deep-swatches-row" id="deep-swatches-row">
+                <div class="hotspot-swatches">
+                  <span class="swatch-dot sw-sand"></span>
+                  <span class="swatch-dot sw-clay"></span>
+                  <span class="swatch-dot sw-charcoal"></span>
+                </div>
+                <span class="mono-tag" id="deep-material-code"
+                  >MAT // TRAVERTINE + OAK</span
+                >
+              </div>
+
+              <div class="deep-mini-specs">
+                <div>
+                  <span class="mono-tag">LOCATION</span>
+                  <b id="deep-spec-location">DHA Phase 6, Lahore</b>
+                </div>
+                <div>
+                  <span class="mono-tag">AREA</span>
+                  <b id="deep-spec-area">5,400 sq.ft</b>
+                </div>
+                <div>
+                  <span class="mono-tag">COMMISSION</span>
+                  <b id="deep-spec-budget">Rs 8.5M</b>
+                </div>
+              </div>
+
+              <div class="deep-feature-callout" id="deep-feature-callout">
+                ✦ Hand-troweled mineral lime plaster across double-height living
+                walls
+              </div>
+            </div>
+
+            <div class="deep-hud-actions">
+              <a
+                href="index-project-detail.html?id=sand-villa"
+                id="deep-dossier-link"
+                class="btn f hud-cta-btn"
+                >Full Dossier →</a
+              >
+              <a
+                href="index-consultation-booking.html"
+                id="deep-book-link"
+                class="btn hud-cta-btn"
+                >Book Similar ✦</a
+              >
+            </div>
+          </aside>
+        </div>
+
+        <div class="deep-bottom-progress">
+          <span class="mono-tag" id="deep-scroll-status"
+            >SCROLL DOWN TO DIVE DEEPER INTO PROJECT 01</span
+          >
+          <div class="deep-master-track">
+            <div class="deep-master-fill" id="deep-master-fill"></div>
+          </div>
+          <span class="mono-tag" id="deep-progress-pct">00%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <div class="head">
+        <p class="eye mono-tag">02.00 // What We Do</p>
+        <h2>Design for every <em>corner</em> of your space</h2>
+      </div>
+      <div class="grid">
+        <div class="sv">
+          <span class="sv-index mono-tag">01</span>
+          <h3>Residential Architecture</h3>
+          <p>
+            Full-home planning, bespoke lighting, acoustic treatments, and
+            custom furniture for villas.
+          </p>
+        </div>
+        <div class="sv">
+          <span class="sv-index mono-tag">02</span>
+          <h3>Commercial Headquarters</h3>
+          <p>
+            Inspiring workspaces, executive boardrooms, and boutique showrooms
+            that elevate company culture.
+          </p>
+        </div>
+        <div class="sv">
+          <span class="sv-index mono-tag">03</span>
+          <h3>Kitchens &amp; Spa Baths</h3>
+          <p>
+            Smart ergonomic layouts, imported marble waterfall slabs, and
+            bespoke concealment cabinetry.
+          </p>
+        </div>
+        <div class="sv">
+          <span class="sv-index mono-tag">04</span>
+          <h3>Styling &amp; Curation</h3>
+          <p>
+            Custom textile palettes, curated original art procurement, and
+            organic ceramic styling.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Before & After Transformation Slider -->
+    <section class="transformation-section">
+      <div class="head">
+        <p class="eye mono-tag">03.00 // The Transformation</p>
+        <h2>Click to <em>Restructure</em></h2>
+        <p>
+          Click on the weathered old building—or drag the handle—to watch it
+          restructure into a brand-new luxury residence.
+        </p>
+      </div>
+
+      <div
+        class="ba ba-clickable"
+        id="ba"
+        title="Click to restructure building"
+      >
+        <div class="img-box" id="af">
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+            alt="Restructured Luxury Modern House"
+            draggable="false"
+          />
+        </div>
+
+        <div class="img-box b ba-ruin-layer" id="bf">
+          <img
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80"
+            alt="Old Broken Building Structure Before"
+            draggable="false"
+          />
+          <div class="ba-ruin-overlay" aria-hidden="true"></div>
+        </div>
+
+        <div class="ba-scan-beam" id="ba-scan-beam" aria-hidden="true"></div>
+
+        <span class="lb lb-right mono-tag">AFTER // NEW STRUCTURE</span>
+        <span class="lb lb-left mono-tag">BEFORE // BROKEN SHELL</span>
+        <div class="ln" id="ln"></div>
+        <div class="kn" id="kn">↔</div>
+
+        <button
+          type="button"
+          class="ba-restructure-pill mono-tag"
+          id="ba-restructure-btn"
+        >
+          ✦ Click to Restructure Building
+        </button>
+      </div>
+    </section>
+
+    <!-- Stats Counter Section -->
+    <section class="dark">
+      <div class="st">
+        <div>
+          <b class="cn" data-to="250" data-suffix="+">250+</b
+          ><span>Projects Completed</span>
+        </div>
+        <div>
+          <b class="cn" data-to="12" data-suffix="">12</b
+          ><span>Years Experience</span>
+        </div>
+        <div>
+          <b class="cn" data-to="98" data-suffix="%">98%</b
+          ><span>Client Approval</span>
+        </div>
+        <div>
+          <b class="cn" data-to="15" data-suffix="">15</b
+          ><span>Awarded Architects</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Working Process Section -->
+    <section id="process">
+      <div class="head">
+        <p class="eye mono-tag">04.00 // How We Work</p>
+        <h2>A simple, <em>stress-free</em> process</h2>
+      </div>
+      <div class="stp">
+        <div>
+          <b>01</b>
+          <h3>Consultation</h3>
+          <p>
+            We listen closely to your spatial needs, lifestyle flow, budget, and
+            aesthetic vision.
+          </p>
+        </div>
+        <div>
+          <b>02</b>
+          <h3>Concept &amp; 3D</h3>
+          <p>
+            Physical material moodboards, spatial layouts, and hyper-realistic
+            3D walkthroughs.
+          </p>
+        </div>
+        <div>
+          <b>03</b>
+          <h3>Execution</h3>
+          <p>
+            Turnkey sourcing, artisan fabrication, and rigorous on-site
+            architectural supervision.
+          </p>
+        </div>
+        <div>
+          <b>04</b>
+          <h3>Handover</h3>
+          <p>
+            Pristine final styling, scent diffusion, and turnkey handover ready
+            to live in.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <div class="head">
+        <p class="eye mono-tag">05.00 // Kind Words</p>
+        <h2>What clients <em>say</em></h2>
+      </div>
+      <div class="grid">
+        <div class="tm">
+          <p>
+            “They turned our empty raw apartment into a warm sanctuary. Every
+            lighting angle felt considered.”
+          </p>
+          <small>— Sara A. (Sand Villa)</small>
+        </div>
+        <div class="tm">
+          <p>
+            “On schedule, uncompromising quality, and zero budget creep. Our
+            corporate suites look stunning.”
+          </p>
+          <small>— Bilal K. (Ocean Office)</small>
+        </div>
+        <div class="tm">
+          <p>
+            “The 3D photorealistic renderings matched the finished home down to
+            the fabric textures.”
+          </p>
+          <small>— Hina R. (Blush Penthouse)</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stage 5: Final Frosted Glass Dossier Box CTA -->
+    <section class="dossier-finale-section" id="dossier-finale">
+      <div class="wall-shadow-word finale-shadow-word">MAKE IT REAL</div>
+
+      <div class="dossier-glass-box" id="dossier-glass-box">
+        <div class="dossier-box-lid">
+          <span class="mono-tag">MAISON ARIA // PRIVATE COMMISSION</span>
+          <span class="hanging-studio-tag mono-tag">ARIA 26</span>
+        </div>
+
+        <div class="dossier-inner-preview" id="dossier-inner-preview">
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
+            alt="Bespoke Architectural Dossier"
+          />
+        </div>
+
+        <div class="dossier-box-front glass-hud">
+          <div class="dossier-front-left">
+            <span class="mono-tag">ARCHIVE EDITION</span>
+            <h3>Maison / Aria Studio</h3>
+            <p>Ready to transform your residence or flagship workspace?</p>
+          </div>
+
+          <div class="dossier-front-right">
+            <div class="hud-barcode" aria-hidden="true"></div>
+            <a href="index-consultation-booking.html" class="btn f"
+              >Commission Your Space ✦</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      © 2026 Maison Aria Interior Architecture Studio. All rights reserved.
+      <span class="footer-sep">•</span>
+      <a href="index-admin.html" class="footer-admin-link">Studio Admin CMS</a>
+    </footer>
+
+    <script type="module" src="./interior-desgin/scripts/interior.js"></script>
+  </body>
+</html>
